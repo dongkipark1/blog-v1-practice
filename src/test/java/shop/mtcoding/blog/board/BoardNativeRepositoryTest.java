@@ -16,6 +16,19 @@ public class BoardNativeRepositoryTest {
     private BoardNativeRepository boardNativeRepository;
 
     @Test
+    public void findById_test() {
+
+        //given
+        int id = 1;
+        //when
+        Board board = boardNativeRepository.findById(id);
+        //then
+        Assertions.assertThat(board.getTitle()).isEqualTo("제목1");
+        Assertions.assertThat(board.getContent()).isEqualTo("내용1");
+    }
+
+
+    @Test
     public void findAll_test() {
 
         //given
